@@ -29,6 +29,6 @@ class CategoriesController < ApplicationController
   private
   def post_params
 	  # params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password)
-    params.require(:category).permit(:title, :description, :category)
+    params.require(:category).permit(:name)
   end
 end
