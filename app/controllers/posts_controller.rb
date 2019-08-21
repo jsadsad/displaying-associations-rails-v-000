@@ -27,4 +27,10 @@ class PostsController < ApplicationController
 		post.update(params.require(:post).permit(:name))
 		redirect_to post_path(post)
 	end
+
+	private
+	def post_params
+		# params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password)
+		params.require(:post).permit(:title, :description, :category)
+	end
 end
