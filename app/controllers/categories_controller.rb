@@ -21,8 +21,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    category = Category.find(params[:id])
-    category.update(params.require(:category).permit(:title,:description,:post_status,:author_id, :category_id))
+    @category = Category.find(params[:id])
+    @category.update(params.require(:category).permit(:title,:description,:post_status,:author_id, :category_id))
     redirect_to category_path(category)
   end
 
